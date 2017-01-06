@@ -15,6 +15,11 @@ void FileParser::load_raw_commands()
     raw_commands.clear();
     is.open(file_name, std::ios::binary);
 
+    if (!is.is_open())
+    {
+        throw std::runtime_error("Cannot open file");
+    }
+
     auto file_size = get_file_size();
 
     check_signature();
