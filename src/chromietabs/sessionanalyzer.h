@@ -93,7 +93,7 @@ public:
 }
 
 /*! A ChromieTabs::SessionAnalyzer example.
- * @example src/readerapp/main.cc
+ * @example example/main.cc
  */
 
 #endif // CHROMIETABS_SESSIONANALYZER_H

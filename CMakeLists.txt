@@ -17,3 +17,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 include_directories("${chromietabs_SOURCE_DIR}/src")
 
 add_subdirectory(src)
+add_subdirectory(example)
