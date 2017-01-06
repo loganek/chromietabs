@@ -1,12 +1,12 @@
 add_library(chromietabs
     commandfactory.cc
     commands.cc
-    fileparser.cc
     pathutils.cc
     pickle.cc
     rawcommand.h
     sessionanalyzer.cc
-    sessionreader.cc)
+    sessionreader.cc
+    snssfilereader.cc)
 
 install(TARGETS chromietabs
     LIBRARY DESTINATION lib
@@ -15,10 +15,10 @@ install(TARGETS chromietabs
 install(FILES
     commandfactory.h
     commands.h
-    fileparser.h
     pathutils.h
     pickle.h
     rawcommand.h
     sessionanalyzer.h
     sessionreader.h
+    snssfilereader.h
     DESTINATION include/${PROJECT_NAME})

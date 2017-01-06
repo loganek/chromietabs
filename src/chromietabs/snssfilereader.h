@@ -1,5 +1,5 @@
-#ifndef CHROMIETABS_FILEPARSER_H
-#define CHROMIETABS_FILEPARSER_H
+#ifndef CHROMIETABS_SNSSFILEREADER_H
+#define CHROMIETABS_SNSSFILEREADER_H
 
 #include <chromietabs/rawcommand.h>
 
@@ -10,9 +10,9 @@ namespace ChromieTabs
 {
 
 /**
- * @brief The FileParser class is responsible for reading raw commands from SNSS files.
+ * @brief The SNSSFileReader class is responsible for reading raw commands from SNSS files.
  */
-class FileParser
+class SNSSFileReader
 {
     std::vector<RawCommand> raw_commands;
     std::ifstream is;
@@ -29,7 +29,7 @@ public:
      * @brief Initializes an object.
      * @param file_name A file name that will be read.
      */
-    FileParser(const std::string &file_name);
+    SNSSFileReader(const std::string &file_name);
 
     /**
      * @brief Gets an array of raw commands.
@@ -40,4 +40,4 @@ public:
 
 }
 
-#endif // FILEPARSER_H
+#endif // CHROMIETABS_SNSSFILEREADER_H

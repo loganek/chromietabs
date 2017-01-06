@@ -1,16 +1,16 @@
-#include "fileparser.h"
+#include "snssfilereader.h"
 
 #include <fstream>
 
 namespace ChromieTabs
 {
 
-FileParser::FileParser(const std::string &file_name)
+SNSSFileReader::SNSSFileReader(const std::string &file_name)
 {
     load_raw_commands(file_name);
 }
 
-void FileParser::load_raw_commands(const std::string &file_name)
+void SNSSFileReader::load_raw_commands(const std::string &file_name)
 {
     raw_commands.clear();
     is.open(file_name, std::ios::binary);
@@ -42,7 +42,7 @@ void FileParser::load_raw_commands(const std::string &file_name)
     is.close();
 }
 
-std::size_t FileParser::get_file_size()
+std::size_t SNSSFileReader::get_file_size()
 {
     is.seekg(0, std::ios::end);
     std::size_t file_size = is.tellg();
@@ -51,7 +51,7 @@ std::size_t FileParser::get_file_size()
     return file_size;
 }
 
-void FileParser::check_signature()
+void SNSSFileReader::check_signature()
 {
     std::int32_t signature;
     is.read(reinterpret_cast<char*>(&signature), sizeof(signature));
@@ -62,7 +62,7 @@ void FileParser::check_signature()
     }
 }
 
-std::vector<RawCommand> FileParser::get_raw_commands() const
+std::vector<RawCommand> SNSSFileReader::get_raw_commands() const
 {
     return raw_commands;
 }
