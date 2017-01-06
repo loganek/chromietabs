@@ -22,7 +22,7 @@ static std::string get_config_dir()
     return std::string(home_dir) + "/.config";
 }
 
-std::string PathUtils::get_current_session_path(BrowserBuild browser)
+std::string PathUtils::get_current_session_path(BrowserType browser)
 {
 #ifndef __linux__
     throw std::runtime_error("The method is implemented only for linux platform");
@@ -30,10 +30,10 @@ std::string PathUtils::get_current_session_path(BrowserBuild browser)
     auto current_session_dir = get_config_dir() + "/";
 
     switch (browser) {
-    case BrowserBuild::GOOGLE_CHROME:
+    case BrowserType::GOOGLE_CHROME:
         current_session_dir += "google-chrome";
         break;
-    case BrowserBuild::CHROMIUM:
+    case BrowserType::CHROMIUM:
         current_session_dir += "chromium";
         break;
     }

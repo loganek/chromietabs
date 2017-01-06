@@ -6,11 +6,11 @@ namespace ChromieTabs
 {
 
 FileParser::FileParser(const std::string &file_name)
-    : file_name(file_name)
 {
+    load_raw_commands(file_name);
 }
 
-void FileParser::load_raw_commands()
+void FileParser::load_raw_commands(const std::string &file_name)
 {
     raw_commands.clear();
     is.open(file_name, std::ios::binary);

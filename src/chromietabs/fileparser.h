@@ -9,10 +9,12 @@
 namespace ChromieTabs
 {
 
+/**
+ * @brief The FileParser class is responsible for reading raw commands from SNSS files.
+ */
 class FileParser
 {
     std::vector<RawCommand> raw_commands;
-    std::string file_name;
     std::ifstream is;
 
     void check_signature();
@@ -20,11 +22,19 @@ class FileParser
 
     const std::int32_t snss_magic = 0x53534E53;
 
+    void load_raw_commands(const std::string &file_name);
+
 public:
+    /**
+     * @brief Initializes an object.
+     * @param file_name A file name that will be read.
+     */
     FileParser(const std::string &file_name);
 
-    void load_raw_commands();
-
+    /**
+     * @brief Gets an array of raw commands.
+     * @return An array containing raw commands.
+     */
     std::vector<RawCommand> get_raw_commands() const;
 };
 

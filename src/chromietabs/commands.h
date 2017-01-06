@@ -8,24 +8,30 @@
 namespace ChromieTabs
 {
 
+/**
+ * @brief The Session command type enumeration.
+ */
 enum class CommandType : std::uint8_t
 {
-    SET_TAB_WINDOW = 0,
-    SET_TAB_INDEX_IN_WINDOW = 2,
-    TAB_NAVIGATION_PATH_PRUNED_FROM_BACK = 5,
-    UPDATE_TAB_NAVIGATION = 6,
-    SET_SELECTED_NAVIGATION_INDEX = 7,
-    SET_SELECTED_TAB_IN_INDEX = 8,
-    SET_WINDOW_TYPE = 9,
-    TAB_NAVIGATION_PATH_PRUNED_FROM_FRONT = 11,
-    SET_PINNED_STATE = 12,
-    SET_EXTENSION_APP_ID = 13,
-    SET_WINDOW_BOUNDS3 = 14,
-    SET_WINDOW_APP_NAME = 15,
-    TAB_CLOSED = 16,
-    WINDOW_CLOSED = 17
+    SET_TAB_WINDOW = 0, /**< Set a tab in a window */
+    SET_TAB_INDEX_IN_WINDOW = 2, /**< Set an index for a tab in a window */
+    TAB_NAVIGATION_PATH_PRUNED_FROM_BACK = 5, /**< TODO */
+    UPDATE_TAB_NAVIGATION = 6, /**< Update tab navigation details */
+    SET_SELECTED_NAVIGATION_INDEX = 7, /**< Select index of navigation in a tab */
+    SET_SELECTED_TAB_IN_INDEX = 8, /**< Select index of a tab in a window */
+    SET_WINDOW_TYPE = 9, /**< Set window type */
+    TAB_NAVIGATION_PATH_PRUNED_FROM_FRONT = 11, /**< TODO */
+    SET_PINNED_STATE = 12, /**< Set pinned state */
+    SET_EXTENSION_APP_ID = 13, /**< Set extension app ID */
+    SET_WINDOW_BOUNDS3 = 14, /**< Set window parameters: position, size and state */
+    SET_WINDOW_APP_NAME = 15, /**< Set window application name */
+    TAB_CLOSED = 16, /**< Tab closed */
+    WINDOW_CLOSED = 17 /**< Window closed */
 };
 
+/**
+ * @brief The Command class is a base class for the Session commands
+ */
 class Command
 {
 protected:
@@ -34,11 +40,20 @@ protected:
 
 public:
     virtual ~Command() {}
+
+    /**
+     * @brief Initialize Command object from a raw command.
+     * @param raw_cmd The raw command.
+     */
     Command(const RawCommand &raw_cmd) : type(static_cast<CommandType>(raw_cmd.type)), content(raw_cmd.content) {}
 
     CommandType get_command_type() const { return type; }
 };
 
+/**
+ * The PairStructure class is a helper class that represents data
+ * data structure containig two int32 variables.
+ */
 class PairStructure
 {
 protected:
@@ -46,6 +61,10 @@ protected:
     std::int32_t second;
 
 public:
+    /**
+     * @brief Initializes the object.
+     * @param content A data buffer.
+     */
     PairStructure(const content_t & content)
     {
         first = *(std::int32_t*)content.data();
@@ -128,6 +147,10 @@ public:
     std::int32_t get_state() const { return state; }
 };
 
+/**
+ * The ClosedStructure struct is a helper data structure for
+ * Closed commands.
+ */
 struct ClosedStructure
 {
     std::int32_t id;

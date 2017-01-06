@@ -60,12 +60,12 @@ bool Pickle::Iterator::read_builtin_type(Type& result)
     return true;
 }
 
-int Pickle::Iterator::read_int(int &val)
+bool Pickle::Iterator::read_int(int &val)
 {
     return read_builtin_type(val);
 }
 
-int Pickle::Iterator::read_int32(std::int32_t &val)
+bool Pickle::Iterator::read_int32(std::int32_t &val)
 {
     return read_builtin_type(val);
 }

@@ -16,11 +16,11 @@ static std::string get_session_path(const std::string &arg)
 {
     if (arg == "-g" || arg == "--google-chrome")
     {
-        return ChromieTabs::PathUtils::get_current_session_path(ChromieTabs::BrowserBuild::GOOGLE_CHROME);
+        return ChromieTabs::PathUtils::get_current_session_path(ChromieTabs::BrowserType::GOOGLE_CHROME);
     }
     else if (arg == "-c" || arg == "--chromium")
     {
-        return ChromieTabs::PathUtils::get_current_session_path(ChromieTabs::BrowserBuild::CHROMIUM);
+        return ChromieTabs::PathUtils::get_current_session_path(ChromieTabs::BrowserType::CHROMIUM);
     }
     else
     {

@@ -8,18 +8,30 @@
 namespace ChromieTabs
 {
 
+/**
+ * @brief The Pickle class provides methods for reading data from binary files.
+ *
+ * See: https://chromium.googlesource.com/chromium/src/+/master/base/pickle.h
+ */
 class Pickle
 {
     content_t::value_type *raw_ptr;
     std::int32_t payload_size;
 
 public:
+    /**
+     * @brief Initializes the object.
+     * @param content A binary data.
+     */
     Pickle(const content_t &content)
         : raw_ptr(const_cast<content_t::value_type*>(content.data()))
     {
         payload_size = *reinterpret_cast<const std::int32_t*>(content.data());
     }
 
+    /**
+     * @brief The Iterator class is an iterator class for a Pickle object.
+     */
     class Iterator
     {
         content_t::value_type *raw_ptr;
@@ -40,13 +52,38 @@ public:
         inline bool read_builtin_type(Type& result);
 
     public:
+        /**
+         * @brief Initializes the object.
+         * @param pickle A pickle.
+         */
         Iterator(const Pickle *pickle);
 
-        int read_int(int &val);
-        int read_int32(std::int32_t &val);
+        /**
+         * @brief Reads int value from the Pickle object.
+         * @param val An output variable.
+         * @return True, if read succeeded; otherwise, false.
+         */
+        bool read_int(int &val);
+
+        /**
+         * @brief Reads int32 value from the Pickle object.
+         * @param val An output variable.
+         * @return True, if read succeeded; otherwise, false.
+         */
+        bool read_int32(std::int32_t &val);
+
+        /**
+         * @brief Reads string value from the Pickle object.
+         * @param val An output variable.
+         * @return True, if read succeeded; otherwise, false.
+         */
         bool read_string(std::string &val);
     };
 
+    /**
+     * @brief Gets an iterator for the object.
+     * @return The iterator.
+     */
     Iterator get_iterator() const { return Iterator(this); }
 };
 

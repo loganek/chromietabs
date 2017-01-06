@@ -7,11 +7,7 @@ namespace ChromieTabs
 
 SessionReader::SessionReader(const std::string &file_name)
 {
-    FileParser parser(file_name);
-
-    parser.load_raw_commands();
-
-    for (const auto &raw_cmd : parser.get_raw_commands())
+    for (const auto &raw_cmd : FileParser(file_name).get_raw_commands())
     {
         auto cmd = CommandFactory::create_command(raw_cmd);
         if (cmd)
