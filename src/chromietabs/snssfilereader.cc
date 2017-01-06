@@ -42,7 +42,7 @@ void SNSSFileReader::load_raw_commands(const std::string &file_name)
     is.close();
 }
 
-std::size_t SNSSFileReader::get_file_size()
+std::ifstream::pos_type SNSSFileReader::get_file_size()
 {
     is.seekg(0, std::ios::end);
     std::size_t file_size = is.tellg();

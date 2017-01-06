@@ -18,7 +18,7 @@ class SNSSFileReader
     std::ifstream is;
 
     void check_signature();
-    std::size_t get_file_size();
+    std::ifstream::pos_type get_file_size();
 
     const std::int32_t snss_magic = 0x53534E53;
 

@@ -6,6 +6,7 @@
 #include <chromietabs/sessionanalyzer.h>
 #include <chromietabs/pathutils.h>
 
+#include <cstring>
 #include <iostream>
 
 static void print_usage(const char *app_name)
@@ -41,7 +42,7 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
-    if (argv[2] == "-h" || argv[2] == "--help")
+    if (strcmp(argv[2], "-h") == 0 || strcmp(argv[2], "--help") == 0)
     {
         print_usage(argv[0]);
         return EXIT_SUCCESS;

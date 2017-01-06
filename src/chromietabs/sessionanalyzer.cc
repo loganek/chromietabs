@@ -76,6 +76,9 @@ void SessionAnalyzer::analyze_command(const std::shared_ptr<Command> &cmd)
             else ++it;
         }
     }
+        break;
+    default:
+        break;
     }
 }
 
