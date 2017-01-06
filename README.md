@@ -20,6 +20,7 @@ for (auto wnd_id : analyzer.get_window_ids())
     }
 }
 ```
+Full example can be found here: [chromietabs-example](https://github.com/loganek/chromietabs/blob/master/example/main.cc)
 
 ## Build
 1. Download the sources:
