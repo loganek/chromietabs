@@ -77,13 +77,13 @@ public:
     std::string get_current_url(std::int32_t tab_id) const;
 
     /**
-     * @brief Gets a collection of identifiers of the opened windows.
-     * @return The collection of opened window identifiers.
+     * @brief Gets a collection of identifiers of the open windows.
+     * @return The collection of open window identifiers.
      */
     std::vector<std::int32_t> get_window_ids() const;
 
     /**
-     * @brief Gets a collection of currently opened URL addresses in the specific window.
+     * @brief Gets a collection of currently open URL addresses in the specific window.
      * @param window_id The window identifier.
      * @return The collection of URLs.
      */
@@ -91,5 +91,9 @@ public:
 };
 
 }
+
+/*! A ChromieTabs::SessionAnalyzer example.
+ * @example src/readerapp/main.cc
+ */
 
 #endif // CHROMIETABS_SESSIONANALYZER_H

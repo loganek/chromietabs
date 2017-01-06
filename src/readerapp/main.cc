@@ -1,3 +1,8 @@
+/*
+ * Example application that demonstrates how to use chromietabs library.
+ * Program reads and displays information about currently open and active
+ * tabs and windows of Google Chrome or Chromium application.
+ */
 #include <chromietabs/sessionanalyzer.h>
 #include <chromietabs/pathutils.h>
 

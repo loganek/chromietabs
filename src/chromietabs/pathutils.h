@@ -36,4 +36,8 @@ public:
 
 }
 
+/*! A ChromieTabs::PathUtils example.
+ * @example src/readerapp/main.cc
+ */
+
 #endif // CHROMIETABS_PATHUTILS_H
