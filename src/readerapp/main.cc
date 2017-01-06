@@ -1,4 +1,4 @@
-#include "chromietabs/sessionreader.h"
+#include <chromietabs/sessionanalyzer.h>
 
 #include <iostream>
 
@@ -10,21 +10,21 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
-    ChromieTabs::SessionReader reader(argv[1]);
+    ChromieTabs::SessionAnalyzer analyzer{ChromieTabs::SessionReader(argv[1])};
 
-    std::cout << "Windows count: " << reader.get_window_ids().size() << std::endl;
+    std::cout << "Windows count: " << analyzer.get_window_ids().size() << std::endl;
 
-    for (auto wnd_id : reader.get_window_ids())
+    for (auto wnd_id : analyzer.get_window_ids())
     {
-        for (auto url : reader.get_window_urls(wnd_id))
+        for (auto url : analyzer.get_window_urls(wnd_id))
         {
             std::cout << "[Window " << wnd_id << "] Url: " << url << std::endl;
         }
     }
 
-    std::cout << "Current window: " << reader.get_current_window_id() << std::endl;
-    std::cout << "Current tab ID: " << reader.get_current_tab_id(reader.get_current_window_id()) << std::endl;
-    std::cout << "Current URL: " << reader.get_current_url(reader.get_current_tab_id(reader.get_current_window_id())) << std::endl;
+    std::cout << "Current window: " << analyzer.get_current_window_id() << std::endl;
+    std::cout << "Current tab ID: " << analyzer.get_current_tab_id(analyzer.get_current_window_id()) << std::endl;
+    std::cout << "Current URL: " << analyzer.get_current_url(analyzer.get_current_tab_id(analyzer.get_current_window_id())) << std::endl;
 
     return EXIT_SUCCESS;
 }

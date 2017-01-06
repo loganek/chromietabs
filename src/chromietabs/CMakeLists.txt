@@ -4,6 +4,7 @@ add_library(chromietabs
     fileparser.cc
     pickle.cc
     rawcommand.h
+    sessionanalyzer.cc
     sessionreader.cc)
 
 install(TARGETS chromietabs
