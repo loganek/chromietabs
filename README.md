@@ -1,7 +1,7 @@
 # chromietabs
 [![Build Status](https://travis-ci.org/loganek/chromietabs.svg?branch=master)](https://travis-ci.org/loganek/chromietabs)
 
-Lightweight library for getting information about opened/active tabs in Google Chrome and Chromium web browser
+Lightweight library for getting information about open/active tabs in Google Chrome and Chromium web browser
 
 ## Example
 Example below demonstrates how to print all open tabs in the Google Chrome browser.
@@ -42,7 +42,7 @@ $ make
 
 ## Documentation
 Documentation for the latest version of the library can be found here: [master documentation](https://loganek.github.io/chromietabs/master/index.html).
-Documentation for all available releases can be found herer: [documentation](https://loganek.github.io/chromietabs/index.html).
+Documentation for all available releases can be found here: [documentation](https://loganek.github.io/chromietabs/index.html).
 
 ## Contributing
 
