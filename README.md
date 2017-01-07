@@ -40,6 +40,10 @@ $ cmake ..
 $ make
 ```
 
+## Documentation
+Documentation for the latest version of the library can be found here: [master documentation](https://loganek.github.io/chromietabs/master/index.html).
+Documentation for all available releases can be found herer: [documentation](https://loganek.github.io/chromietabs/index.html).
+
 ## Contributing
 
 Please fork the parent repository and contribute back using [pull requests](https://github.com/loganek/chromietabs/pulls). Features can be requested using [issues](https://github.com/loganek/chromietabs/issues). All code, comments, and critiques are greatly appreciated.
