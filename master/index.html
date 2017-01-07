@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.12"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>chromietabs: Main Page</title>
+<title>chromietabs: chromietabs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,10 +82,28 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">chromietabs Documentation</div>  </div>
+<div class="title">chromietabs </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p><a href="https://travis-ci.org/loganek/chromietabs"></a></p>
+<p>Lightweight library for getting information about opened/active tabs in Google Chrome and Chromium web browser</p>
+<h2>Example</h2>
+<p>Example below demonstrates how to print all open tabs in the Google Chrome browser.</p>
+<div class="fragment"><div class="line">{c++}</div><div class="line">auto session_path = ChromieTabs::PathUtils::get_current_session_path(</div><div class="line">                                              ChromieTabs::BrowserType::GOOGLE_CHROME);</div><div class="line">ChromieTabs::SessionAnalyzer analyzer{ChromieTabs::SessionReader(session_path)};</div><div class="line"></div><div class="line">std::cout &lt;&lt; &quot;Tabs:&quot; &lt;&lt; std::endl;</div><div class="line">for (auto wnd_id : analyzer.get_window_ids())</div><div class="line">{</div><div class="line">    for (auto url : analyzer.get_window_urls(wnd_id))</div><div class="line">    {</div><div class="line">        std::cout &lt;&lt; &quot;   [Window &quot; &lt;&lt; wnd_id &lt;&lt; &quot;] Url: &quot; &lt;&lt; url &lt;&lt; std::endl;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><p> Full example can be found here: <a href="https://github.com/loganek/chromietabs/blob/master/example/main.cc">chromietabs-example</a></p>
+<h2>Build</h2>
+<ol type="1">
+<li><p class="startli">Download the sources:</p>
+<p class="startli">a) latest git-master version: </p><div class="fragment"><div class="line">$ git clone https://github.com/loganek/chromietabs.git</div><div class="line">$ cd chromietabs</div></div><!-- fragment --><p> b) latest release: <a href="https://github.com/loganek/chromietabs/releases">sources</a></p>
+</li>
+<li>Compile the project <div class="fragment"><div class="line">$ mkdir build</div><div class="line">$ cd build</div><div class="line">$ cmake ..</div><div class="line">$ make</div></div><!-- fragment --></li>
+</ol>
+<h2>Documentation</h2>
+<p>Documentation for the latest version of the library can be found here: <a href="https://loganek.github.io/chromietabs/master/index.html">master documentation</a>. Documentation for all available releases can be found herer: <a href="https://loganek.github.io/chromietabs/index.html">documentation</a>.</p>
+<h2>Contributing</h2>
+<p>Please fork the parent repository and contribute back using <a href="https://github.com/loganek/chromietabs/pulls">pull requests</a>. Features can be requested using <a href="https://github.com/loganek/chromietabs/issues">issues</a>. All code, comments, and critiques are greatly appreciated.</p>
+<h2>Licensing</h2>
+<p>This project is developed under MIT license. See <a href="https://github.com/loganek/chromietabs/blob/master/LICENSE">LICENSE</a> file for more details. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

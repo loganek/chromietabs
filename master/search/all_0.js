@@ -7,5 +7,5 @@ var searchData=
   ['content',['content',['../struct_chromie_tabs_1_1_raw_command.html#ae5a32c88aa24740f9c855177bb786f60',1,'ChromieTabs::RawCommand']]],
   ['create_5fcommand',['create_command',['../class_chromie_tabs_1_1_command_factory.html#a77eb5adbbb9a2f9141953641372d59b0',1,'ChromieTabs::CommandFactory']]],
   ['current_5fnavigation_5findex',['current_navigation_index',['../struct_chromie_tabs_1_1_tab_info.html#a88ae807a580ac694cccdde4be39c2364',1,'ChromieTabs::TabInfo']]],
-  ['chromietabs',['chromietabs',['../md__home_loganek_repos_chromietabs__r_e_a_d_m_e.html',1,'']]]
+  ['chromietabs',['chromietabs',['../index.html',1,'']]]
 ];
