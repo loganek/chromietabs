@@ -42,13 +42,13 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
-    if (strcmp(argv[2], "-h") == 0 || strcmp(argv[2], "--help") == 0)
+    if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)
     {
         print_usage(argv[0]);
         return EXIT_SUCCESS;
     }
 
-    std::string session_path = get_session_path(argv[2]);
+    std::string session_path = get_session_path(argv[1]);
     ChromieTabs::SessionAnalyzer analyzer{ChromieTabs::SessionReader(session_path)};
 
     std::cout << "Windows count: " << analyzer.get_window_ids().size() << std::endl;
