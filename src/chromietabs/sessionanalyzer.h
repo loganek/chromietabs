@@ -10,6 +10,21 @@ namespace ChromieTabs
 {
 
 /**
+ * @brief The NavigationEntry struct represents single navigation entry.
+ */
+struct NavigationEntry
+{
+    /**
+     * Navigation URL.
+     */
+    std::string url;
+    /**
+     * Navigation window title.
+     */
+    std::u16string title;
+};
+
+/**
  * @brief The TabInfo struct is a helper data structure for representing Tab.
  */
 struct TabInfo
@@ -33,7 +48,7 @@ struct TabInfo
     /**
      * @brief Collection of tab navigations.
      */
-    std::unordered_map<std::int32_t, std::string> navigations;
+    std::unordered_map<std::int32_t, NavigationEntry> navigations;
 };
 
 /**
@@ -70,11 +85,11 @@ public:
     std::int32_t get_current_tab_id(std::int32_t window_id) const;
 
     /**
-     * @brief Gets URL address of the specified tab.
+     * @brief Gets a current navigation entry of the specified tab.
      * @param tab_id The tab identifier.
-     * @return The URL address.
+     * @return The navigation entry address.
      */
-    std::string get_current_url(std::int32_t tab_id) const;
+    NavigationEntry get_current_navigation_entry(std::int32_t tab_id) const;
 
     /**
      * @brief Gets a collection of identifiers of the open windows.
@@ -83,11 +98,11 @@ public:
     std::vector<std::int32_t> get_window_ids() const;
 
     /**
-     * @brief Gets a collection of currently open URL addresses in the specific window.
+     * @brief Gets a collection of currently open navigation entries in the specific window.
      * @param window_id The window identifier.
-     * @return The collection of URLs.
+     * @return The collection of navigation entries.
      */
-    std::vector<std::string> get_window_urls(std::int32_t window_id) const;
+    std::vector<NavigationEntry> get_window_navigation_entries(std::int32_t window_id) const;
 };
 
 }

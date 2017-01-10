@@ -47,7 +47,7 @@ void SessionAnalyzer::analyze_command(const std::shared_ptr<Command> &cmd)
     case CommandType::UPDATE_TAB_NAVIGATION:
     {
         auto command = std::static_pointer_cast<UpdateTabNavigationCommand>(cmd);
-        tabs[command->get_tab_id()].navigations[command->get_navigation_index()] = command->get_url();
+        tabs[command->get_tab_id()].navigations[command->get_navigation_index()] = {command->get_url(), command->get_title()};
     }
         break;
     case CommandType::TAB_CLOSED:
@@ -95,9 +95,9 @@ std::vector<std::int32_t> SessionAnalyzer::get_window_ids() const
     return keys;
 }
 
-std::vector<std::string> SessionAnalyzer::get_window_urls(std::int32_t window_id) const
+std::vector<NavigationEntry> SessionAnalyzer::get_window_navigation_entries(std::int32_t window_id) const
 {
-    std::vector<std::string> urls;
+    std::vector<NavigationEntry> urls;
 
     for(const auto& tab : tabs)
     {
@@ -134,18 +134,18 @@ std::int32_t SessionAnalyzer::get_current_tab_id(std::int32_t window_id) const
     return -1;
 }
 
-std::string SessionAnalyzer::get_current_url(std::int32_t tab_id) const
+NavigationEntry SessionAnalyzer::get_current_navigation_entry(std::int32_t tab_id) const
 {
     auto it = tabs.find(tab_id);
 
     if (it == tabs.end() || it->second.current_navigation_index == -1)
     {
-        return "";
+        return NavigationEntry{};
     }
 
     auto navigation_it = it->second.navigations.find(it->second.current_navigation_index);
 
-    return navigation_it != it->second.navigations.end() ? navigation_it->second : "";
+    return navigation_it != it->second.navigations.end() ? navigation_it->second : NavigationEntry{};
 }
 
 }

@@ -6,6 +6,8 @@
 #include <chromietabs/sessionanalyzer.h>
 #include <chromietabs/pathutils.h>
 
+#include <codecvt>
+#include <locale>
 #include <cstring>
 #include <iostream>
 
@@ -51,17 +53,21 @@ int main(int argc, char **argv)
     std::string session_path = get_session_path(argv[1]);
     ChromieTabs::SessionAnalyzer analyzer{ChromieTabs::SessionReader(session_path)};
 
+    std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> convert;
+
     std::cout << "Windows count: " << analyzer.get_window_ids().size() << std::endl;
     std::cout << "Current window: " << analyzer.get_current_window_id() << std::endl;
     std::cout << "Current tab ID: " << analyzer.get_current_tab_id(analyzer.get_current_window_id()) << std::endl;
-    std::cout << "Current URL: " << analyzer.get_current_url(analyzer.get_current_tab_id(analyzer.get_current_window_id())) << std::endl;
+    std::cout << "Current URL: " << analyzer.get_current_navigation_entry(analyzer.get_current_tab_id(analyzer.get_current_window_id())).url << std::endl;
 
     std::cout << "Tabs:" << std::endl;
     for (auto wnd_id : analyzer.get_window_ids())
     {
-        for (auto url : analyzer.get_window_urls(wnd_id))
+        for (auto navigation : analyzer.get_window_navigation_entries(wnd_id))
         {
-            std::cout << "   [Window " << wnd_id << "] Url: " << url << std::endl;
+            std::cout << "   [Window " << wnd_id << "]" << std::endl
+                      << "       Title: " << convert.to_bytes(navigation.title) << std::endl
+                      << "       Url: " << navigation.url << std::endl;
         }
     }
 
