@@ -16,6 +16,7 @@ var hierarchy =
     ] ],
     [ "ChromieTabs::CommandFactory", "class_chromie_tabs_1_1_command_factory.html", null ],
     [ "ChromieTabs::Pickle::Iterator", "class_chromie_tabs_1_1_pickle_1_1_iterator.html", null ],
+    [ "ChromieTabs::NavigationEntry", "struct_chromie_tabs_1_1_navigation_entry.html", null ],
     [ "ChromieTabs::PairStructure", "class_chromie_tabs_1_1_pair_structure.html", [
       [ "ChromieTabs::SetSelectedNavigationIndexCommand", "class_chromie_tabs_1_1_set_selected_navigation_index_command.html", null ],
       [ "ChromieTabs::SetSelectedTabInIndex", "class_chromie_tabs_1_1_set_selected_tab_in_index.html", null ],

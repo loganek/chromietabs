@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('struct_chromie_tabs_1_1_tab_info.html'
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_chromie_tabs_1_1_tab_info-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -94,6 +95,12 @@ $(document).ready(function(){initNavTree('struct_chromie_tabs_1_1_tab_info.html'
 
 <p><code>#include &lt;<a class="el" href="sessionanalyzer_8h_source.html">sessionanalyzer.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6177d2983b8cea6d39d25b66bfaab305"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_chromie_tabs_1_1_navigation_entry.html">NavigationEntry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_chromie_tabs_1_1_tab_info.html#a6177d2983b8cea6d39d25b66bfaab305">get_current_navigation_entry</a> () const</td></tr>
+<tr class="memdesc:a6177d2983b8cea6d39d25b66bfaab305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a current navigation entry of the tab.  <a href="#a6177d2983b8cea6d39d25b66bfaab305">More...</a><br /></td></tr>
+<tr class="separator:a6177d2983b8cea6d39d25b66bfaab305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2258bbc3f4cd5a888c03970f32288ec5"><td class="memItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_chromie_tabs_1_1_tab_info.html#a2258bbc3f4cd5a888c03970f32288ec5">id</a> = -1</td></tr>
@@ -104,14 +111,43 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a736f4ea0c4c104071b47e1b4183ee2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ae807a580ac694cccdde4be39c2364"><td class="memItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_chromie_tabs_1_1_tab_info.html#a88ae807a580ac694cccdde4be39c2364">current_navigation_index</a> = -1</td></tr>
 <tr class="separator:a88ae807a580ac694cccdde4be39c2364"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31e3b7ac9647fe81ed1b36844b69747"><td class="memItemLeft" align="right" valign="top"><a id="ae31e3b7ac9647fe81ed1b36844b69747"></a>
-std::unordered_map&lt; std::int32_t, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_chromie_tabs_1_1_tab_info.html#ae31e3b7ac9647fe81ed1b36844b69747">navigations</a></td></tr>
-<tr class="memdesc:ae31e3b7ac9647fe81ed1b36844b69747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of tab navigations. <br /></td></tr>
-<tr class="separator:ae31e3b7ac9647fe81ed1b36844b69747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d431e73d4dd61c96f3803dcd0437ac7"><td class="memItemLeft" align="right" valign="top"><a id="a6d431e73d4dd61c96f3803dcd0437ac7"></a>
+std::unordered_map&lt; std::int32_t, <a class="el" href="struct_chromie_tabs_1_1_navigation_entry.html">NavigationEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_chromie_tabs_1_1_tab_info.html#a6d431e73d4dd61c96f3803dcd0437ac7">navigations</a></td></tr>
+<tr class="memdesc:a6d431e73d4dd61c96f3803dcd0437ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of tab navigations. <br /></td></tr>
+<tr class="separator:a6d431e73d4dd61c96f3803dcd0437ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="struct_chromie_tabs_1_1_tab_info.html" title="The TabInfo struct is a helper data structure for representing Tab. ">TabInfo</a> struct is a helper data structure for representing Tab. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="example_2main_8cc-example.html#_a3">example/main.cc</a>.</dd>
+</dl></div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6177d2983b8cea6d39d25b66bfaab305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6177d2983b8cea6d39d25b66bfaab305">&sect;&nbsp;</a></span>get_current_navigation_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_chromie_tabs_1_1_navigation_entry.html">NavigationEntry</a> &amp; ChromieTabs::TabInfo::get_current_navigation_entry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a current navigation entry of the tab. </p>
+<dl class="section return"><dt>Returns</dt><dd>The navigation entry. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>if current navigation doesn't exist in the tab. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="example_2main_8cc-example.html#a5">example/main.cc</a>.</dd>
+</dl>
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a88ae807a580ac694cccdde4be39c2364"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88ae807a580ac694cccdde4be39c2364">&sect;&nbsp;</a></span>current_navigation_index</h2>
 
@@ -139,7 +175,8 @@ std::unordered_map&lt; std::int32_t, std::string &gt;&#160;</td><td class="memIt
       </table>
 </div><div class="memdoc">
 <p>Tab identifier. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="example_2main_8cc-example.html#a4">example/main.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a id="a736f4ea0c4c104071b47e1b4183ee2c0"></a>
@@ -172,8 +209,9 @@ std::unordered_map&lt; std::int32_t, std::string &gt;&#160;</td><td class="memIt
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/loganek/repos/chromietabs/src/chromietabs/<a class="el" href="sessionanalyzer_8h_source.html">sessionanalyzer.h</a></li>
+<li>/home/loganek/repos/chromietabs/src/chromietabs/sessionanalyzer.cc</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

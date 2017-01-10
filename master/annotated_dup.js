@@ -4,6 +4,7 @@ var annotated_dup =
       [ "ClosedStructure", "struct_chromie_tabs_1_1_closed_structure.html", "struct_chromie_tabs_1_1_closed_structure" ],
       [ "Command", "class_chromie_tabs_1_1_command.html", "class_chromie_tabs_1_1_command" ],
       [ "CommandFactory", "class_chromie_tabs_1_1_command_factory.html", null ],
+      [ "NavigationEntry", "struct_chromie_tabs_1_1_navigation_entry.html", "struct_chromie_tabs_1_1_navigation_entry" ],
       [ "PairStructure", "class_chromie_tabs_1_1_pair_structure.html", "class_chromie_tabs_1_1_pair_structure" ],
       [ "PathUtils", "class_chromie_tabs_1_1_path_utils.html", null ],
       [ "Pickle", "class_chromie_tabs_1_1_pickle.html", "class_chromie_tabs_1_1_pickle" ],

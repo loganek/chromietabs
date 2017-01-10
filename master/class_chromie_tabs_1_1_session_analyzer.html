@@ -102,18 +102,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb1fe193a4abb0147e293a07a9834bf6"><td class="memItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#abb1fe193a4abb0147e293a07a9834bf6">get_current_window_id</a> () const</td></tr>
 <tr class="memdesc:abb1fe193a4abb0147e293a07a9834bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an identifier of currently active window.  <a href="#abb1fe193a4abb0147e293a07a9834bf6">More...</a><br /></td></tr>
 <tr class="separator:abb1fe193a4abb0147e293a07a9834bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab27986ff6b6f4a2596ce0fe0869428fb"><td class="memItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#ab27986ff6b6f4a2596ce0fe0869428fb">get_current_tab_id</a> (std::int32_t window_id) const</td></tr>
-<tr class="memdesc:ab27986ff6b6f4a2596ce0fe0869428fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets currently active tab identifier in a specific window.  <a href="#ab27986ff6b6f4a2596ce0fe0869428fb">More...</a><br /></td></tr>
-<tr class="separator:ab27986ff6b6f4a2596ce0fe0869428fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfc51bec5769b990d8a9bd7f04da0ed5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#acfc51bec5769b990d8a9bd7f04da0ed5">get_current_url</a> (std::int32_t tab_id) const</td></tr>
-<tr class="memdesc:acfc51bec5769b990d8a9bd7f04da0ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets URL address of the specified tab.  <a href="#acfc51bec5769b990d8a9bd7f04da0ed5">More...</a><br /></td></tr>
-<tr class="separator:acfc51bec5769b990d8a9bd7f04da0ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b806dfc02bf629ffeea4e0646e2ab87"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_chromie_tabs_1_1_tab_info.html">TabInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#a8b806dfc02bf629ffeea4e0646e2ab87">get_current_tab</a> (std::int32_t window_id) const</td></tr>
+<tr class="memdesc:a8b806dfc02bf629ffeea4e0646e2ab87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets currently active tab in a specific window.  <a href="#a8b806dfc02bf629ffeea4e0646e2ab87">More...</a><br /></td></tr>
+<tr class="separator:a8b806dfc02bf629ffeea4e0646e2ab87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa599fe1b586e1fc8ce810a7f851fea7a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#aa599fe1b586e1fc8ce810a7f851fea7a">get_window_ids</a> () const</td></tr>
 <tr class="memdesc:aa599fe1b586e1fc8ce810a7f851fea7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection of identifiers of the open windows.  <a href="#aa599fe1b586e1fc8ce810a7f851fea7a">More...</a><br /></td></tr>
 <tr class="separator:aa599fe1b586e1fc8ce810a7f851fea7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c45d71edcf32f3ac55df27427ad408d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#a3c45d71edcf32f3ac55df27427ad408d">get_window_urls</a> (std::int32_t window_id) const</td></tr>
-<tr class="memdesc:a3c45d71edcf32f3ac55df27427ad408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection of currently open URL addresses in the specific window.  <a href="#a3c45d71edcf32f3ac55df27427ad408d">More...</a><br /></td></tr>
-<tr class="separator:a3c45d71edcf32f3ac55df27427ad408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6eb8b207fb9439881c47fa92767635"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_chromie_tabs_1_1_navigation_entry.html">NavigationEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chromie_tabs_1_1_session_analyzer.html#abf6eb8b207fb9439881c47fa92767635">get_window_navigation_entries</a> (std::int32_t window_id) const</td></tr>
+<tr class="memdesc:abf6eb8b207fb9439881c47fa92767635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection of currently open navigation entries in the specific window.  <a href="#abf6eb8b207fb9439881c47fa92767635">More...</a><br /></td></tr>
+<tr class="separator:abf6eb8b207fb9439881c47fa92767635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_chromie_tabs_1_1_session_analyzer.html" title="The SessionAnalyzer class is responsible for analyzing sequence of Session commands. ">SessionAnalyzer</a> class is responsible for analyzing sequence of Session commands. </p>
@@ -146,14 +143,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab27986ff6b6f4a2596ce0fe0869428fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab27986ff6b6f4a2596ce0fe0869428fb">&sect;&nbsp;</a></span>get_current_tab_id()</h2>
+<a id="a8b806dfc02bf629ffeea4e0646e2ab87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b806dfc02bf629ffeea4e0646e2ab87">&sect;&nbsp;</a></span>get_current_tab()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::int32_t ChromieTabs::SessionAnalyzer::get_current_tab_id </td>
+          <td class="memname">const <a class="el" href="struct_chromie_tabs_1_1_tab_info.html">TabInfo</a> &amp; ChromieTabs::SessionAnalyzer::get_current_tab </td>
           <td>(</td>
           <td class="paramtype">std::int32_t&#160;</td>
           <td class="paramname"><em>window_id</em></td><td>)</td>
@@ -162,41 +159,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets currently active tab identifier in a specific window. </p>
+<p>Gets currently active tab in a specific window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window_id</td><td>The window identifier. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The tab identifier. </dd></dl>
-
-</div>
-</div>
-<a id="acfc51bec5769b990d8a9bd7f04da0ed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfc51bec5769b990d8a9bd7f04da0ed5">&sect;&nbsp;</a></span>get_current_url()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string ChromieTabs::SessionAnalyzer::get_current_url </td>
-          <td>(</td>
-          <td class="paramtype">std::int32_t&#160;</td>
-          <td class="paramname"><em>tab_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets URL address of the specified tab. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tab_id</td><td>The tab identifier. </td></tr>
+<dl class="section return"><dt>Returns</dt><dd>The tab. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>if current tab doesn't exist in the window. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The URL address. </dd></dl>
 
 </div>
 </div>
@@ -248,14 +224,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c45d71edcf32f3ac55df27427ad408d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c45d71edcf32f3ac55df27427ad408d">&sect;&nbsp;</a></span>get_window_urls()</h2>
+<a id="abf6eb8b207fb9439881c47fa92767635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6eb8b207fb9439881c47fa92767635">&sect;&nbsp;</a></span>get_window_navigation_entries()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; ChromieTabs::SessionAnalyzer::get_window_urls </td>
+          <td class="memname">std::vector&lt; <a class="el" href="struct_chromie_tabs_1_1_navigation_entry.html">NavigationEntry</a> &gt; ChromieTabs::SessionAnalyzer::get_window_navigation_entries </td>
           <td>(</td>
           <td class="paramtype">std::int32_t&#160;</td>
           <td class="paramname"><em>window_id</em></td><td>)</td>
@@ -264,14 +240,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets a collection of currently open URL addresses in the specific window. </p>
+<p>Gets a collection of currently open navigation entries in the specific window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window_id</td><td>The window identifier. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The collection of URLs. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The collection of navigation entries. </dd></dl>
 
 </div>
 </div>
