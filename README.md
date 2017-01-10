@@ -14,9 +14,9 @@ ChromieTabs::SessionAnalyzer analyzer{ChromieTabs::SessionReader(session_path)};
 std::cout << "Tabs:" << std::endl;
 for (auto wnd_id : analyzer.get_window_ids())
 {
-    for (auto url : analyzer.get_window_urls(wnd_id))
+    for (const auto& navigation : analyzer.get_window_navigation_entries(wnd_id))
     {
-        std::cout << "   [Window " << wnd_id << "] Url: " << url << std::endl;
+        std::cout << "   [Window " << wnd_id << "] Url: " << navigation.url << std::endl;
     }
 }
 ```
