@@ -46,10 +46,13 @@ public:
         template<typename Type>
         inline const content_t::value_type* get_current_pointer_and_advance();
 
-        const content_t::value_type* get_current_pointer_and_advance(int num_bytes);
+        const content_t::value_type* get_current_pointer_and_advance(int num_elements, size_t size_element);
 
         template <typename Type>
         inline bool read_builtin_type(Type& result);
+
+        template<typename T>
+        bool read_base_string(T& val);
 
     public:
         /**
@@ -78,6 +81,13 @@ public:
          * @return True, if read succeeded; otherwise, false.
          */
         bool read_string(std::string &val);
+
+        /**
+         * @brief Reads u16string value from the Pickle object.
+         * @param val An output variable.
+         * @return True, if read succeeded; otherwise, false.
+         */
+        bool read_u16string(std::u16string& val);
     };
 
     /**

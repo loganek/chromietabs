@@ -29,17 +29,29 @@ const content_t::value_type* Pickle::Iterator::get_current_pointer_and_advance()
     return current_ptr;
 }
 
-const content_t::value_type* Pickle::Iterator::get_current_pointer_and_advance(int num_bytes)
+const content_t::value_type* Pickle::Iterator::get_current_pointer_and_advance(int num_elements, size_t size_element = sizeof(char))
 {
+    int num_bytes = num_elements;
+
+    if (size_element > 1)
+    {
+        std::int64_t num_bytes64 = static_cast<std::int64_t>(num_elements) * size_element;
+        num_bytes = static_cast<int>(num_bytes64);
+        if (num_bytes64 != static_cast<std::int64_t>(num_bytes))
+        {
+            return nullptr;
+        }
+    }
+
     if (num_bytes < 0 || raw_ptr_end - raw_ptr < num_bytes)
     {
         return nullptr;
     }
+
     const auto* current_ptr = raw_ptr;
     raw_ptr += align_int(num_bytes, sizeof(std::uint32_t));
     return current_ptr;
 }
-
 
 template <typename Type>
 bool Pickle::Iterator::read_builtin_type(Type& result)
@@ -84,6 +96,29 @@ bool Pickle::Iterator::read_string(std::string &val)
     }
 
     val.assign(reinterpret_cast<const char*>(read_from), str_len);
+    return true;
+}
+
+bool Pickle::Iterator::read_u16string(std::u16string& val)
+{
+    return read_base_string(val);
+}
+
+template<typename T>
+bool Pickle::Iterator::read_base_string(T& val)
+{
+    int str_len;
+    if (!read_int(str_len))
+    {
+        return false;
+    }
+    const auto* read_from = get_current_pointer_and_advance(str_len, sizeof(typename T::value_type));
+    if (!read_from)
+    {
+        return false;
+    }
+
+    val.assign(reinterpret_cast<const typename T::value_type*>(read_from), str_len);
     return true;
 }
 
