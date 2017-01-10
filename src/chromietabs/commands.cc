@@ -13,6 +13,7 @@ UpdateTabNavigationCommand::UpdateTabNavigationCommand(const RawCommand &raw_cmd
     it.read_int32(tab_id);
     it.read_int32(navigation_index);
     it.read_string(url);
+    it.read_u16string(title);
 }
 
 }

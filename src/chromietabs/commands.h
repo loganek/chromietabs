@@ -186,6 +186,7 @@ public:
 class UpdateTabNavigationCommand : public Command
 {
     std::string url;
+    std::u16string title;
     std::int32_t navigation_index;
     std::int32_t tab_id;
 
@@ -193,6 +194,7 @@ public:
     UpdateTabNavigationCommand(const RawCommand &raw_cmd);
 
     std::string get_url() const { return url; }
+    std::u16string get_title() const { return title; }
     std::int32_t get_navigation_index() const { return navigation_index; }
     std::int32_t get_tab_id() const { return tab_id; }
 };
