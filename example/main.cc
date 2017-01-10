@@ -57,8 +57,10 @@ int main(int argc, char **argv)
 
     std::cout << "Windows count: " << analyzer.get_window_ids().size() << std::endl;
     std::cout << "Current window: " << analyzer.get_current_window_id() << std::endl;
-    std::cout << "Current tab ID: " << analyzer.get_current_tab_id(analyzer.get_current_window_id()) << std::endl;
-    std::cout << "Current URL: " << analyzer.get_current_navigation_entry(analyzer.get_current_tab_id(analyzer.get_current_window_id())).url << std::endl;
+
+    ChromieTabs::TabInfo current_tab = analyzer.get_current_tab(analyzer.get_current_window_id());
+    std::cout << "Current tab ID: " << current_tab.id << std::endl;
+    std::cout << "Current URL: " << current_tab.get_current_navigation_entry().url << std::endl;
 
     std::cout << "Tabs:" << std::endl;
     for (auto wnd_id : analyzer.get_window_ids())

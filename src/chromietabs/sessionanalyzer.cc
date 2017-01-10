@@ -1,6 +1,8 @@
 #include "sessionanalyzer.h"
 #include "sessionreader.h"
 
+#include <algorithm>
+
 namespace ChromieTabs
 {
 
@@ -114,38 +116,23 @@ std::vector<NavigationEntry> SessionAnalyzer::get_window_navigation_entries(std:
     return urls;
 }
 
-std::int32_t SessionAnalyzer::get_current_tab_id(std::int32_t window_id) const
+const TabInfo& SessionAnalyzer::get_current_tab(std::int32_t window_id) const
 {
-    auto it = current_tab_in_window.find(window_id);
+    const auto& current_tab_id = current_tab_in_window.at(window_id);
 
-    if (it == current_tab_in_window.end() || it->second == -1)
-    {
-        return -1;
-    }
+    auto it = std::find_if(tabs.begin(), tabs.end(), [window_id, current_tab_id, this] (const decltype(tabs)::value_type& tab) {
+        return tab.second.index_in_window == current_tab_id && tab.second.window_id == window_id;
+    });
 
-    for (const auto &tab : tabs)
-    {
-        if (tab.second.window_id == window_id && tab.second.index_in_window == it->second)
-        {
-            return tab.second.id;
-        }
-    }
+    if (it == tabs.end())
+        throw std::out_of_range("get_current_tab");
 
-    return -1;
+    return it->second;
 }
 
-NavigationEntry SessionAnalyzer::get_current_navigation_entry(std::int32_t tab_id) const
+const NavigationEntry& TabInfo::get_current_navigation_entry() const
 {
-    auto it = tabs.find(tab_id);
-
-    if (it == tabs.end() || it->second.current_navigation_index == -1)
-    {
-        return NavigationEntry{};
-    }
-
-    auto navigation_it = it->second.navigations.find(it->second.current_navigation_index);
-
-    return navigation_it != it->second.navigations.end() ? navigation_it->second : NavigationEntry{};
+    return navigations.at(current_navigation_index);
 }
 
 }

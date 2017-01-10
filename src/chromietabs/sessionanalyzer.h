@@ -49,6 +49,13 @@ struct TabInfo
      * @brief Collection of tab navigations.
      */
     std::unordered_map<std::int32_t, NavigationEntry> navigations;
+
+    /**
+     * @brief Gets a current navigation entry of the tab.
+     * @return The navigation entry.
+     * @throw std::out_of_range if current navigation doesn't exist in the tab.
+     */
+    const NavigationEntry& get_current_navigation_entry() const;
 };
 
 /**
@@ -78,18 +85,12 @@ public:
     std::int32_t get_current_window_id() const { return current_window_id; }
 
     /**
-     * @brief Gets currently active tab identifier in a specific window.
+     * @brief Gets currently active tab in a specific window.
      * @param window_id The window identifier.
-     * @return The tab identifier.
+     * @return The tab.
+     * @throw std::out_of_range if current tab doesn't exist in the window.
      */
-    std::int32_t get_current_tab_id(std::int32_t window_id) const;
-
-    /**
-     * @brief Gets a current navigation entry of the specified tab.
-     * @param tab_id The tab identifier.
-     * @return The navigation entry address.
-     */
-    NavigationEntry get_current_navigation_entry(std::int32_t tab_id) const;
+    const TabInfo& get_current_tab(std::int32_t window_id) const;
 
     /**
      * @brief Gets a collection of identifiers of the open windows.
