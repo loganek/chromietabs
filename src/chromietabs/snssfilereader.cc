@@ -29,7 +29,7 @@ void SNSSFileReader::load_raw_commands(const std::string &file_name)
 
     while (is.tellg() < file_size)
     {
-        std::int16_t size;
+        std::uint16_t size;
         is.read(reinterpret_cast<char*>(&size), sizeof(size));
 
         RawCommand cmd;
@@ -45,7 +45,7 @@ void SNSSFileReader::load_raw_commands(const std::string &file_name)
 std::ifstream::pos_type SNSSFileReader::get_file_size()
 {
     is.seekg(0, std::ios::end);
-    std::size_t file_size = is.tellg();
+    auto file_size = is.tellg();
     is.seekg(0, std::ios::beg);
 
     return file_size;
