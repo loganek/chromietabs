@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/loganek/chromietabs.svg?branch=master)](https://travis-ci.org/loganek/chromietabs)
+
 # chromietabs
 [![Build Status](https://travis-ci.org/loganek/chromietabs.svg?branch=master)](https://travis-ci.org/loganek/chromietabs)
 
