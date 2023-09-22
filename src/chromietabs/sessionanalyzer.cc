@@ -2,6 +2,7 @@
 #include "sessionreader.h"
 
 #include <algorithm>
+#include <stdexcept>
 
 namespace ChromieTabs
 {
