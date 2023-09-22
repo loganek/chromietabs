@@ -17,7 +17,7 @@ void SNSSFileReader::load_raw_commands(const std::string &file_name)
 
     if (!is.is_open())
     {
-        throw std::runtime_error("Cannot open file");
+        throw std::runtime_error("Cannot open file " + file_name);
     }
 
     auto file_size = get_file_size();
